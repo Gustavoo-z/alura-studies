@@ -1,9 +1,13 @@
 import style from "./Button.module.scss";
 
-export default function Button() {
+interface ButtonProps {
+  children: React.ReactNode;
+}
+
+export default function Button({ children }: ButtonProps) {
   return (
     <button className={style.botao}>
-      Botão
+      {children}
     </button>
   );
 }
