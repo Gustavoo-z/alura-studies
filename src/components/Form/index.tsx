@@ -2,19 +2,26 @@ import { useState } from "react";
 import Button from "../Button";
 import style from "./Form.module.scss";
 import { ITarefa } from "../../types/tarefa";
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Form( {setTarefas}: {setTarefas: React.Dispatch<React.SetStateAction<ITarefa[]>>} ) {
-  const [tempo, setTempo] = useState("00:00:00");
+  const [tempo, setTempo] = useState("00:00");
   const [tarefa, setTarefa] = useState("");
 
 function adicionarTarefa() {
-  const novaTarefa = { tarefa, tempo };
+  const novaTarefa = { 
+    tarefa, 
+    tempo, 
+    selecionado: false, 
+    completado: false, 
+    id: uuidv4() 
+  };
   setTarefas(tarefasAntigas => {
     const atualizadas = [...tarefasAntigas, novaTarefa];
     return atualizadas;
   });
   setTarefa("");
-  setTempo("00:00:00");
+  setTempo("00:00");
 }
 
   return (
