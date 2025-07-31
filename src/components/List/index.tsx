@@ -13,11 +13,7 @@ export default function List({ tarefas, selecionarTarefa }: Props) {
       <h2> Estudos do dia </h2>
       <ul>
         {tarefas.map((item) => (
-          <Item
-            {...item}
-            key={item.id}
-            selecionarTarefa={selecionarTarefa}
-          />
+          <Item {...item} key={item.id} selecionarTarefa={selecionarTarefa} />
         ))}
       </ul>
     </aside>

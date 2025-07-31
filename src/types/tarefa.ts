@@ -3,5 +3,5 @@ export interface ITarefa {
   tempo: string;
   selecionado: boolean;
   completado: boolean;
-  id: string
+  id: string;
 }
