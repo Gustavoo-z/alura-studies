@@ -4,11 +4,11 @@ import style from "./Form.module.scss";
 import { ITarefa } from "../../types/tarefa";
 import { v4 as uuidv4 } from "uuid";
 
-export default function Form({
-  setTarefas,
-}: {
+interface FormProps {
   setTarefas: React.Dispatch<React.SetStateAction<ITarefa[]>>;
-}) {
+}
+
+export default function Form({ setTarefas }: FormProps) {
   const [tempo, setTempo] = useState("00:00");
   const [tarefa, setTarefa] = useState("");
 
